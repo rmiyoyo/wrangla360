@@ -81,7 +81,7 @@ export default function Login() {
 
         <div className="image-section">
           <Image 
-            src="https://unsplash.com/photos/JpbYw8GvbZg/download?ixid=M3wxMjA3fDB8MXxhbGx8NDB8fHx8fHx8fDE3NTY3NjIyNjN8&force=true&w=640" 
+            src="/login.jpg" 
             alt="Login visual"
             width={400}
             height={600}
