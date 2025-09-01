@@ -1,6 +1,7 @@
 'use client';
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -74,12 +75,18 @@ export default function Login() {
           </div>
 
           <p className="signup-text">
-            Don't have an account? <a href="#">Sign up</a>
+            Don&apos;t have an account? <a href="#">Sign up</a>
           </p>
         </div>
 
         <div className="image-section">
-          <img src="https://unsplash.com/photos/JpbYw8GvbZg/download?ixid=M3wxMjA3fDB8MXxhbGx8NDB8fHx8fHx8fDE3NTY3NjIyNjN8&force=true&w=640" alt="" />
+          <Image 
+            src="https://unsplash.com/photos/JpbYw8GvbZg/download?ixid=M3wxMjA3fDB8MXxhbGx8NDB8fHx8fHx8fDE3NTY3NjIyNjN8&force=true&w=640" 
+            alt="Login visual"
+            width={400}
+            height={600}
+            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          />
         </div>
       </div>
 
@@ -255,12 +262,6 @@ export default function Login() {
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-
-        .image-section img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
         }
 
         @media (max-width: 768px) {
