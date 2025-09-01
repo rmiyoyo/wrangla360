@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import MobileMenu from './components/MobileMenu';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,11 +19,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="nav-logo"></div>
           <div className="nav-links">
             <Link href="/">Home</Link>
-            <Link href="/what-we-do">What we do</Link>
+            <Link href="/what-we-do">What We Do</Link>
             <Link href="/resources">Resources</Link>
             <Link href="/team">Team</Link>
             <Link href="/contact">Contact us</Link>
           </div>
+          <MobileMenu />
         </nav>
 
         <main>{children}</main>
@@ -33,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/privacy">Privacy Policy</Link>
               <Link href="/terms">Terms of Service</Link>
               <Link href="/linkedin">LinkedIn</Link>
-              <Link href="/twitter">Twitter</Link>
+              <Link href="/twitter">X (Formerly Twitter)</Link>
               <Link href="/instagram">Instagram</Link>
             </div>
             <p className="footer-copyright">© 2025 Wrangla 360. All rights reserved.</p>

@@ -24,8 +24,8 @@ export default async function Home() {
           <Image
             src="/woman-laptop.jpg"
             alt="Professional working with data analytics"
-            width={450}
-            height={400}
+            width={500}
+            height={450}
             priority
             className="rounded-xl"
           />
@@ -41,14 +41,14 @@ export default async function Home() {
                 src={article.imageUrl || '/default-image.jpg'}
                 alt={article.title}
                 width={400}
-                height={200}
-                className="w-full h-48 object-cover"
+                height={240}
+                className="w-full h-60 object-cover"
               />
               <div className="article-content">
                 <h3>{article.title}</h3>
                 <p>{article.excerpt}</p>
                 <Link href={`/article/${article.id}`}>
-                  Read more →
+                  Read more <span aria-hidden="true">→</span>
                 </Link>
               </div>
             </article>

@@ -28,9 +28,29 @@ nav {
 }
 
 .nav-logo {
+  color: #1a365d;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0;
+}
+
+.nav-logo::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  border: 3px solid #1a365d;
+  border-radius: 50%;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(45deg);
+}
+
+.nav-logo::after {
+  content: "Wrangla 360";
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1a365d;
+  letter-spacing: -0.02em;
 }
 
 .nav-links {
@@ -49,8 +69,49 @@ nav {
   color: #1a365d;
 }
 
-.mobile-menu {
+.mobile-menu-btn {
   display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mobile-menu-btn span {
+  width: 20px;
+  height: 2px;
+  background: #1a365d;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobile-menu-content {
+  background: white;
+  width: 70%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-menu-content a {
+  color: #4a5568;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 .hero {
@@ -64,7 +125,7 @@ nav {
 }
 
 .hero-content h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 700;
   line-height: 1.2;
   color: #1a365d;
@@ -86,11 +147,11 @@ nav {
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .hero-btn:hover {
-  background: #2c5282;
+  transform: translateY(-2px);
 }
 
 .hero-image {
@@ -112,7 +173,7 @@ nav {
 }
 
 .news-section h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #1a365d;
   margin-bottom: 3rem;
@@ -121,42 +182,41 @@ nav {
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .article-card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
 }
 
 .article-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
 }
 
 .article-card img {
   width: 100%;
-  height: 200px;
+  height: 240px;
   object-fit: cover;
 }
 
 .article-content {
-  padding: 1.5rem;
+  padding: 1.75rem;
 }
 
 .article-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 600;
   color: #1a365d;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .article-content p {
   color: #4a5568;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   line-height: 1.5;
 }
 
@@ -164,6 +224,9 @@ nav {
   color: #1a365d;
   font-weight: 600;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .article-content a:hover {
@@ -177,32 +240,33 @@ nav {
 }
 
 .focus-section h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #1a365d;
   margin-bottom: 3rem;
+  text-align: left;
 }
 
 .focus-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
 .focus-item {
   background: white;
-  border: 2px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 2rem 1.5rem;
-  text-align: center;
+  padding: 2.5rem 2rem;
+  text-align: left;
   font-weight: 600;
   color: #1a365d;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  font-size: 1.125rem;
+  transition: border-color 0.2s ease;
 }
 
 .focus-item:hover {
   border-color: #1a365d;
-  background: #f7fafc;
 }
 
 .cta-section {
@@ -212,25 +276,25 @@ nav {
 }
 
 .cta-section h2 {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #1a365d;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .cta-btn {
-  padding: 0.875rem 2rem;
+  padding: 1rem 2.25rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .cta-btn.primary {
@@ -239,7 +303,7 @@ nav {
 }
 
 .cta-btn.primary:hover {
-  background: #2c5282;
+  transform: translateY(-2px);
 }
 
 .cta-btn.secondary {
@@ -249,8 +313,7 @@ nav {
 }
 
 .cta-btn.secondary:hover {
-  background: #1a365d;
-  color: white;
+  transform: translateY(-2px);
 }
 
 footer {
@@ -294,35 +357,53 @@ footer {
     display: none;
   }
   
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
   .hero {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem 5% 3rem;
+    gap: 2.5rem;
+    padding: 2.5rem 5% 4rem;
     text-align: center;
   }
   
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
   
   .news-section {
-    padding: 3rem 5%;
+    padding: 4rem 5%;
+  }
+  
+  .news-section h2 {
+    font-size: 2rem;
   }
   
   .articles-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
   .focus-section {
-    padding: 3rem 5%;
+    padding: 4rem 5%;
+  }
+  
+  .focus-section h2 {
+    font-size: 2rem;
   }
   
   .focus-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .cta-section {
-    padding: 3rem 5%;
+    padding: 4rem 5%;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.75rem;
   }
   
   .cta-buttons {
@@ -334,30 +415,4 @@ footer {
     width: 100%;
     max-width: 280px;
   }
-}
-
-.nav-logo {
-  color: #1a365d;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0;
-}
-
-.nav-logo::before {
-  content: "";
-  width: 28px;
-  height: 28px;
-  border: 3px solid #1a365d;
-  border-radius: 50%;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  transform: rotate(45deg);
-}
-
-.nav-logo::after {
-  content: "Wrangla 360";
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
 }
