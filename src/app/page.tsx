@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+import { prisma } from '@/lib/prisma';
 
 export default async function Home() {
   const articles = await prisma.article.findMany({ take: 2 });
