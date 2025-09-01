@@ -7,7 +7,7 @@ import MobileMenu from './components/MobileMenu';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Analytics Consultancy | Data-Driven Sustainability Solutions',
+  title: 'Wrangla 360 | Data-Driven Sustainability Solutions',
   description: 'We provide data-driven solutions to support decision making and drive sustainable outcomes.',
 };
 
