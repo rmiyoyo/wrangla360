@@ -2,6 +2,9 @@
   "name": "wrangla360",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "23.6.1"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
