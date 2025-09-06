@@ -91,7 +91,7 @@ export default function WhatWeDo() {
           <h2>Our focus communities</h2>
           <p className="focus-subtitle">
             We work with diverse stakeholders across the food system to create lasting impact 
-            where it's needed most.
+            where it is needed most.
           </p>
           
           <div className="communities-grid">
@@ -248,7 +248,7 @@ export default function WhatWeDo() {
         <div className="impact-container">
           <h2>What we have achieved</h2>
           <p className="impact-subtitle">
-            Since founding our practice in 2020, we've delivered analytics solutions 
+            Since founding our practice in 2020, we have delivered analytics solutions 
             with measurable impact across diverse food system challenges.
           </p>
           
