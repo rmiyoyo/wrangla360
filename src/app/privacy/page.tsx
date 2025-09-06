@@ -107,7 +107,7 @@ export default function PrivacyPolicy() {
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             We may update this Privacy Policy from time to time. We will notify you of any changes by posting 
-            the new policy on our website and updating the "Last updated" date.
+            the new policy on our website and updating the &quot;Last updated&quot; date.
           </p>
 
           <h2 style={{ color: '#126F43', fontSize: '1.75rem', marginTop: '2.5rem', marginBottom: '1rem' }}>

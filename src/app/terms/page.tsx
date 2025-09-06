@@ -93,7 +93,7 @@ export default function TermsOfService() {
             8. Disclaimer of Warranties
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            Our services are provided "as is" without warranties of any kind, either express or implied. 
+            Our services are provided &quot;as is&quot; without warranties of any kind, either express or implied. 
             We do not warrant that our services will be error-free, secure, or available at all times.
           </p>
 
