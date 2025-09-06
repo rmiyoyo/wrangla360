@@ -10,11 +10,17 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Wrangla 360 | Data-Driven Sustainability Solutions',
   description: 'We provide data-driven solutions to support decision making and drive sustainable outcomes.',
+  icons: {
+    icon: '/Favicon Transparent.ico',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/Favicon Transparent.ico" />
+      </head>
       <body className={inter.className}>
         <nav>
           <div className="nav-logo"></div>
