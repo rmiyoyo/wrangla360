@@ -183,6 +183,18 @@ nav {
   font-weight: 600;
   color: #126F43;
   font-size: 1.125rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.focus-item:hover {
+  background: #126F43;
+  color: white;
+  border-color: #126F43;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(18, 111, 67, 0.15);
+  text-decoration: none;
 }
 
 .news-section {
