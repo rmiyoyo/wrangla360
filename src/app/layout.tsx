@@ -4,9 +4,7 @@ import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import MobileMenu from './components/MobileMenu';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 const inter = Inter({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
   title: 'Wrangla 360 | Data-Driven Sustainability Solutions',
   description: 'We provide data-driven solutions to support decision making and drive sustainable outcomes.',
@@ -14,7 +12,6 @@ export const metadata: Metadata = {
     icon: '/Favicon Transparent.ico',
   },
 };
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -23,7 +20,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={inter.className}>
         <nav>
-          <div className="nav-logo"></div>
+          <div>
+            <picture>
+              <source media="(max-width: 768px)" srcSet="/Wordpress Transparent.png" width="32" height="32" />
+              <img src="/Transparent Logo.png" alt="Wrangla 360 Logo" width="150" height="107" />
+            </picture>
+          </div>
           <div className="nav-links">
             <Link href="/">Home</Link>
             <Link href="/what-we-do">What We Do</Link>
@@ -33,9 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <MobileMenu />
         </nav>
-
         <main>{children}</main>
-
         <footer>
           <div className="footer-content">
             <div className="footer-grid">
