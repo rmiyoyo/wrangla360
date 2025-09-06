@@ -28,8 +28,8 @@ export default function Team() {
           <div>
             <h1>Meet the team behind Wrangla 360</h1>
             <p>
-              Our lean team of experts combines data analytics, sustainability knowledge, 
-              and food systems expertise to deliver impactful solutions.
+              Our expert team combines data science, risk assessment, climate modeling, 
+              business development, and seed systems expertise to deliver impactful sustainability solutions.
             </p>
           </div>
           <div className="hero-enhanced-image">
@@ -53,27 +53,27 @@ export default function Team() {
         <div className="team-showcase-container">
           <h2>Our Leadership Team</h2>
           <p className="team-subtitle">
-            Experienced professionals dedicated to sustainable outcomes.
+            Our team consists of professionals with experience in data science, risk assessment, climate modelling, business development and seed systems.
           </p>
           <div className="team-grid">
             <div className="team-card">
               <div className="team-image">
                 <Image
                   src="/member-one.jpg"
-                  alt="Member One"
+                  alt="Director"
                   width={300}
                   height={300}
                   className="team-img"
                 />
               </div>
               <div className="team-content">
-                <h3>Member One</h3>
-                <h4>Founder & CEO</h4>
+                <h3>Director</h3>
+                <h4>Director</h4>
                 <p>
-                  With a PhD in Environmental Science and over 15 years in sustainable agriculture, 
-                  Member One leads our mission to make data-driven decisions accessible for food system resilience.
+                  With a PhD in Environmental Science and extensive experience in seed systems, 
+                  our Director leads the mission to enhance food system resilience through data-driven strategies.
                 </p>
-                <Link href="https://www.linkedin.com/in/memberone" className="linkedin-link">
+                <Link href="https://www.linkedin.com/in/director" className="linkedin-link">
                   <LinkedInIcon />
                 </Link>
               </div>
@@ -82,20 +82,20 @@ export default function Team() {
               <div className="team-image">
                 <Image
                   src="/member-two.jpg"
-                  alt="Member Two"
+                  alt="Chief Strategy Officer"
                   width={300}
                   height={300}
                   className="team-img"
                 />
               </div>
               <div className="team-content">
-                <h3>Member Two</h3>
-                <h4>Chief Data Scientist</h4>
+                <h3>Chief Strategy Officer</h3>
+                <h4>Chief Strategy Officer</h4>
                 <p>
-                  Member Two specializes in machine learning models for predictive analytics, 
-                  helping optimize resource use and reduce waste in food production.
+                  Our Chief Strategy Officer leverages expertise in climate modeling and risk assessment 
+                  to develop innovative strategies for sustainable food production.
                 </p>
-                <Link href="https://www.linkedin.com/in/membertwo" className="linkedin-link">
+                <Link href="https://www.linkedin.com/in/chiefstrategyofficer" className="linkedin-link">
                   <LinkedInIcon />
                 </Link>
               </div>
@@ -104,20 +104,20 @@ export default function Team() {
               <div className="team-image">
                 <Image
                   src="/member-three.jpg"
-                  alt="Member Three"
+                  alt="Business Development Lead"
                   width={300}
                   height={300}
                   className="team-img"
                 />
               </div>
               <div className="team-content">
-                <h3>Member Three</h3>
-                <h4>Sustainability Director</h4>
+                <h3>Business Development Lead</h3>
+                <h4>Business Development Lead</h4>
                 <p>
-                  Member Three focuses on social impact analytics, addressing food equity 
-                  and ensuring inclusive access for vulnerable communities.
+                  Our Business Development Lead drives partnerships and growth, 
+                  focusing on scalable solutions to advance sustainable food systems.
                 </p>
-                <Link href="https://www.linkedin.com/in/memberthree" className="linkedin-link">
+                <Link href="https://www.linkedin.com/in/businessdevelopmentlead" className="linkedin-link">
                   <LinkedInIcon />
                 </Link>
               </div>
