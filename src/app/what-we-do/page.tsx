@@ -200,46 +200,48 @@ export default function WhatWeDo() {
           <div className="programs-grid">
             <div className="program-card featured-program">
               <div className="program-badge">Most Popular</div>
-              <h3>Think Like a Data Analyst</h3>
-              <div className="program-level">Beginner • 6 weeks</div>
-              <p>
-                Master the fundamentals of data analysis with hands-on projects 
-                using real food systems data. Build the analytical mindset needed 
-                for evidence-based decision making.
-              </p>
-              <div className="program-features">
-                <span>✓ Interactive data visualization</span>
-                <span>✓ Statistical analysis foundations</span>
-                <span>✓ Problem-solving frameworks</span>
-                <span>✓ Real-world case studies</span>
+              <div className="program-content">
+                <h3>Think Like a Data Analyst</h3>
+                <div className="program-level">Beginner • 6 weeks</div>
+                <p>
+                  Master the fundamentals of data analysis with hands-on projects 
+                  using real food systems data. Build the analytical mindset needed 
+                  for evidence-based decision making.
+                </p>
+                <div className="program-features">
+                  <span>✓ Interactive data visualization</span>
+                  <span>✓ Statistical analysis foundations</span>
+                  <span>✓ Problem-solving frameworks</span>
+                  <span>✓ Real-world case studies</span>
+                </div>
+                <Link href="/courses/data-analyst" className="program-btn primary">
+                  Start learning
+                </Link>
               </div>
-              <Link href="/courses/data-analyst" className="program-btn primary">
-                Start learning
-              </Link>
             </div>
-
-            <div className="program-card">
-              <h3>Data in Food Loss & Waste</h3>
-              <div className="program-level">Intermediate • 4 weeks</div>
-              <p>
-                Learn advanced techniques to measure, analyze, and reduce food 
-                waste across supply chains using data-driven approaches.
-              </p>
-              <Link href="/courses/food-waste" className="program-btn secondary">
-                Learn more
-              </Link>
-            </div>
-
-            <div className="program-card">
-              <h3>Precision Agriculture Analytics</h3>
-              <div className="program-level">Advanced • 8 weeks</div>
-              <p>
-                Master IoT integration, predictive modeling, and resource 
-                optimization for modern agricultural systems.
-              </p>
-              <Link href="/courses/precision-agriculture" className="program-btn secondary">
-                Learn more
-              </Link>
+            <div className="secondary-programs">
+              <div className="program-card">
+                <h3>Data in Food Loss & Waste</h3>
+                <div className="program-level">Intermediate • 4 weeks</div>
+                <p>
+                  Learn advanced techniques to measure, analyze, and reduce food 
+                  waste across supply chains using data-driven approaches.
+                </p>
+                <Link href="/courses/food-waste" className="program-btn secondary">
+                  Learn more
+                </Link>
+              </div>
+              <div className="program-card">
+                <h3>Precision Agriculture Analytics</h3>
+                <div className="program-level">Advanced • 8 weeks</div>
+                <p>
+                  Master IoT integration, predictive modeling, and resource 
+                  optimization for modern agricultural systems.
+                </p>
+                <Link href="/courses/precision-agriculture" className="program-btn secondary">
+                  Learn more
+                </Link>
+              </div>
             </div>
           </div>
         </div>
