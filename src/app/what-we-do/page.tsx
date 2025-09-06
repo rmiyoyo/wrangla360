@@ -209,10 +209,10 @@ export default function WhatWeDo() {
                   for evidence-based decision making.
                 </p>
                 <div className="program-features">
-                  <span>✓ Interactive data visualization</span>
-                  <span>✓ Statistical analysis foundations</span>
-                  <span>✓ Problem-solving frameworks</span>
-                  <span>✓ Real-world case studies</span>
+                  <span>Interactive data visualization</span>
+                  <span>Statistical analysis foundations</span>
+                  <span>Problem-solving frameworks</span>
+                  <span>Real-world case studies</span>
                 </div>
                 <Link href="/courses/data-analyst" className="program-btn primary">
                   Start learning
