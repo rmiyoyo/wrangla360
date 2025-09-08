@@ -188,8 +188,8 @@ nav {
 }
 
 .focus-item:hover {
-  border-color: #2c9f5e;
   text-decoration: none;
+  color: #000;
 }
 
 .focus-item-page {
