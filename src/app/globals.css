@@ -374,6 +374,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .nav-logo-img {
+    height: 70px;
+    max-width: 100px;
+  }
   .nav-links {
     display: none;
   }
@@ -474,4 +478,15 @@ footer {
     padding: 0.5rem;
     flex: 0 0 auto;
   }
+}
+
+.nav-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-img {
+  height: 100px;
+  width: auto;
+  max-width: 150px;
 }
