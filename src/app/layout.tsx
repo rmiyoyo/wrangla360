@@ -21,14 +21,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <nav>
           <div className="nav-logo-container">
-            <picture>
-              <source media="(max-width: 768px)" srcSet="/Logos.png" />
-              <img 
-                src="/Logos.png" 
-                alt="Wrangla 360 Logo" 
-                className="nav-logo-img"
-              />
-            </picture>
+            <Link href="/">
+              <picture>
+                <source media="(max-width: 768px)" srcSet="/Logos.png" />
+                <img 
+                  src="/Logos.png" 
+                  alt="Wrangla 360 Logo" 
+                  className="nav-logo-img"
+                />
+              </picture>
+            </Link>
           </div>
           <div className="nav-links">
             <Link href="/">Home</Link>
