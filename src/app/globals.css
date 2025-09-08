@@ -175,26 +175,34 @@ nav {
 }
 
 .focus-item {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
   padding: 2.5rem 2rem;
   text-align: left;
   font-weight: 600;
   color: #126F43;
   font-size: 1.125rem;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
 }
 
 .focus-item:hover {
-  background: #126F43;
-  color: white;
-  border-color: #126F43;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(18, 111, 67, 0.15);
+  border-color: #2c9f5e;
   text-decoration: none;
+}
+
+.focus-item-page {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 2.5rem 2rem;
+  text-align: left;
+  font-weight: 600;
+  color: #126F43;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .news-section {

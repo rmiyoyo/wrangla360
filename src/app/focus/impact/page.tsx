@@ -29,13 +29,13 @@ export default function InclusiveDataSocialImpact() {
       <section className="focus-section">
         <h2>Key Activities</h2>
         <div className="focus-grid">
-          <div className="focus-item">
+          <div className="focus-item-page">
             Develop inclusive, cross-sectional datasets that represent diverse demographics, regional food security, dietary needs, and socioeconomic factors to identify inequities in food access and nutrition.
           </div>
-          <div className="focus-item">
+          <div className="focus-item-page">
             Use geospatial and demographic analytics to map “food deserts” and “food swamps” (areas with limited access to healthy food or a high density of unhealthy food options) and model how climate or economic changes could affect these regions.
           </div>
-          <div className="focus-item">
+          <div className="focus-item-page">
             Collaborate with government bodies, NGOs, and local organizations to create tools for monitoring food access and affordability, enabling targeted interventions to improve food equity and access in underserved communities.
           </div>
         </div>

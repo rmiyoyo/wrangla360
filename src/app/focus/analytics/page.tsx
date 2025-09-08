@@ -29,13 +29,13 @@ export default function PredictiveAnalytics() {
       <section className="focus-section">
         <h2>Key Activities</h2>
         <div className="focus-grid">
-          <div className="focus-item">
+          <div className="focus-item-page">
             Leverage historical and real-time data in machine learning models to forecast production needs and consumption patterns, minimizing waste and promoting efficient use of inputs (e.g., water, fertilizers, energy).
           </div>
-          <div className="focus-item">
+          <div className="focus-item-page">
             Create predictive tools to inform sustainable agriculture practices, such as precision agriculture, that adjust inputs based on crop needs and environmental conditions, reducing emissions and ecological impact.
           </div>
-          <div className="focus-item">
+          <div className="focus-item-page">
             Develop consumer-facing tools and dashboards to visualize and track the carbon footprint, water use, and other sustainability metrics of food products, encouraging informed choices and responsible consumption.
           </div>
         </div>

@@ -29,13 +29,13 @@ export default function SystemicRiskAssessment() {
       <section className="focus-section">
         <h2>Key Activities</h2>
         <div className="focus-grid">
-          <div className="focus-item">
+          <div className="focus-item-page">
             Develop comprehensive risk models that integrate climate and market data with production, distribution, and consumption patterns, assessing how climate variability and extreme events may affect food availability and affordability.
           </div>
-          <div className="focus-item">
+          <div className="focus-item-page">
             Conduct scenario analysis using actuarial methods to evaluate financial impacts and insurance needs for stakeholders across the food system, including farmers, distributors, retailers, and consumers.
           </div>
-          <div className="focus-item">
+          <div className="focus-item-page">
             Offer risk-adjusted strategies for each stage in the food system to mitigate impacts, such as shifting production practices, adapting distribution networks, or diversifying food sources.
           </div>
         </div>
