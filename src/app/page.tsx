@@ -14,7 +14,7 @@ export default async function Home() {
             We are a consultancy that provides data-driven solutions to support decision making and
             drive sustainable outcomes.
           </p>
-          <Link href="/about" className="hero-btn">
+          <Link href="/what-we-do" className="hero-btn">
             Learn more
           </Link>
         </div>
