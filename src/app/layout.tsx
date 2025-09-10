@@ -4,7 +4,9 @@ import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import MobileMenu from './components/MobileMenu';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 const inter = Inter({ subsets: ['latin'] });
+
 export const metadata: Metadata = {
   title: 'Wrangla 360 | Data-Driven Sustainability Solutions',
   description: 'We provide data-driven solutions to support decision making and drive sustainable outcomes.',
@@ -12,7 +14,10 @@ export const metadata: Metadata = {
     icon: '/Favicon Transparent.ico',
   },
 };
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <html lang="en">
       <head>
@@ -57,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
               <div className="footer-social">
                 <h3 className="footer-heading">Follow Us</h3>
-                <Link href="/linkedin">LinkedIn</Link>
+                <Link href="https://www.linkedin.com/company/wrangla360-consulting/">LinkedIn</Link>
                 <Link href="/twitter">X (Formerly Twitter)</Link>
                 <Link href="/instagram">Instagram</Link>
               </div>
@@ -70,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </div>
               </div>
             </div>
-            <p className="footer-copyright">© 2025 Wrangla 360. All rights reserved.</p>
+            <p className="footer-copyright">© {currentYear} Wrangla 360. All rights reserved.</p>
           </div>
         </footer>
       </body>
