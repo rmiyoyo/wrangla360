@@ -64,7 +64,7 @@ export default async function Home() {
             Predictive analytics
           </Link>
           <Link href="focus/impact" className="focus-item">
-            Inclusive Data and Social Impact
+            Inclusive data and social impact
           </Link>
         </div>
       </section>
