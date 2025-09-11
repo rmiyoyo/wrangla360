@@ -156,7 +156,14 @@
 .service-showcase-content h3 {
   font-size: 2rem;
   font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.service-showcase-content h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
+  opacity: 0.9;
 }
 
 .service-showcase-content p {
@@ -187,12 +194,22 @@
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .secondary-service-card h4 {
   font-size: 1.25rem;
   font-weight: 600;
   color: #126F43;
+  margin-bottom: 0.5rem;
+}
+
+.secondary-service-card h5 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #4a5568;
   margin-bottom: 1rem;
 }
 
@@ -202,10 +219,24 @@
   margin-bottom: 1.5rem;
 }
 
+.secondary-service-image {
+  height: 200px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.secondary-service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 .secondary-service-link {
   color: #126F43;
   font-weight: 600;
   text-decoration: none;
+  align-self: flex-start;
 }
 
 .focus-communities {

@@ -13,10 +13,9 @@ export default function WhatWeDo() {
       <section className="hero-enhanced">
         <div className="hero-enhanced-content">
           <div>
-            <h1>We transform food systems and secure sustainable futures</h1>
+            <h1>How we help you succeed</h1>
             <p>
-              Through data-driven insights and analytics solutions, we empower organizations 
-              to build resilient, equitable, and sustainable food systems for everyone.
+              We believe that strong decisions start with evidence and lead to lasting change. Our services are designed as a connected journey: first, we assess risks in the system; then, we forecast the future with predictive analytics; and finally, we translate insights into inclusive action for social impact.
             </p>
           </div>
           <div className="hero-enhanced-image">
@@ -50,13 +49,11 @@ export default function WhatWeDo() {
             </div>
             <div className="service-showcase-content">
               <h3>Systemic Risk Assessment</h3>
+              <h4>Understanding today’s risks to prepare for tomorrow’s challenges.</h4>
               <p>
-                We build comprehensive risk models to quantify vulnerabilities across 
-                food systems - from climate impacts to market volatility. Our actuarial 
-                approach helps organizations understand and prepare for systemic risks 
-                before they become critical challenges.
+                We map the current state of your food, agriculture, or social systems. Through comprehensive data collection, system diagnostics, and vulnerability analysis, we identify strengths, gaps, and risks. This provides a clear baseline to guide informed decision-making and ensures interventions are grounded in evidence.
               </p>
-              <Link href="/services/risk-assessment" className="service-showcase-btn">
+              <Link href="/focus/risk" className="service-showcase-btn">
                 Explore risk solutions
               </Link>
             </div>
@@ -64,22 +61,39 @@ export default function WhatWeDo() {
           <div className="secondary-services">
             <div className="secondary-service-card">
               <h4>Predictive Analytics</h4>
+              <h5>Forecasting the future with confidence.</h5>
               <p>
-                Machine learning models that optimize resource use and reduce waste 
-                throughout production and consumption cycles, driving sustainable practices.
+                Building on risk assessments, we use advanced analytics and AI-driven models to anticipate future scenarios. From climate impacts on crop yields to supply chain disruptions, our predictive insights help you plan ahead, minimize uncertainty, and respond proactively rather than reactively.
               </p>
-              <Link href="/services/predictive-analytics" className="secondary-service-link">
+              <div className="secondary-service-image">
+                <Image
+                  src="/predictive-analytics.jpg"
+                  alt="Predictive analytics for food systems"
+                  width={300}
+                  height={200}
+                  className="secondary-service-img"
+                />
+              </div>
+              <Link href="/focus/analytics" className="secondary-service-link">
                 Predictive solutions →
               </Link>
             </div>
-            
             <div className="secondary-service-card">
-              <h4>Inclusive Data & Social Impact</h4>
+                <h4>Inclusive Data &amp; Social Impact</h4>
+              <h5>Turning insights into equitable action.</h5>
               <p>
-                Comprehensive datasets and geospatial analytics that address food equity, 
-                mapping food deserts and ensuring vulnerable populations have access.
+                Insights only matter when they drive change. We translate forecasts and risk analyses into inclusive, accessible data solutions that empower communities, policymakers, and businesses. By focusing on equity and social outcomes, we ensure that decisions lead to resilience, sustainability, and lasting impact for all stakeholders.
               </p>
-              <Link href="/services/social-impact" className="secondary-service-link">
+              <div className="secondary-service-image">
+                <Image
+                  src="/social-impact.jpg"
+                  alt="Inclusive data for social impact"
+                  width={300}
+                  height={200}
+                  className="secondary-service-img"
+                />
+              </div>
+              <Link href="/focus/impact" className="secondary-service-link">
                 Social impact tools →
               </Link>
             </div>
@@ -93,7 +107,6 @@ export default function WhatWeDo() {
             We work with diverse stakeholders across the food system to create lasting impact 
             where it is needed most.
           </p>
-          
           <div className="communities-grid">
             <div className="community-card">
               <div className="community-image">
@@ -117,7 +130,6 @@ export default function WhatWeDo() {
                 </Link>
               </div>
             </div>
-
             <div className="community-card">
               <div className="community-image">
                 <Image
@@ -129,7 +141,7 @@ export default function WhatWeDo() {
                 />
               </div>
               <div className="community-content">
-                <h3>Food companies & supply chains</h3>
+                <h3>Food companies &amp; supply chains</h3>
                 <p>
                   Supporting businesses with supply chain analytics, sustainability 
                   metrics, and risk management tools that reduce waste and 
@@ -140,7 +152,6 @@ export default function WhatWeDo() {
                 </Link>
               </div>
             </div>
-
             <div className="community-card">
               <div className="community-image">
                 <Image
@@ -152,7 +163,7 @@ export default function WhatWeDo() {
                 />
               </div>
               <div className="community-content">
-                <h3>Policy makers & NGOs</h3>
+                <h3>Policy makers &amp; NGOs</h3>
                 <p>
                   Providing evidence-based insights and monitoring tools for 
                   food security policies, nutrition programs, and development 
@@ -163,7 +174,6 @@ export default function WhatWeDo() {
                 </Link>
               </div>
             </div>
-
             <div className="community-card">
               <div className="community-image">
                 <Image
@@ -175,7 +185,7 @@ export default function WhatWeDo() {
                 />
               </div>
               <div className="community-content">
-                <h3>Researchers & academics</h3>
+                <h3>Researchers &amp; academics</h3>
                 <p>
                   Collaborating on cutting-edge research with comprehensive 
                   datasets, analytical frameworks, and training programs that 
@@ -196,7 +206,6 @@ export default function WhatWeDo() {
             Comprehensive courses designed to develop data analytics capabilities 
             for sustainable food systems.
           </p>
-          
           <div className="programs-grid">
             <div className="program-card featured-program">
               <div className="program-badge">Most Popular</div>
@@ -221,7 +230,7 @@ export default function WhatWeDo() {
             </div>
             <div className="secondary-programs">
               <div className="program-card">
-                <h3>Data in Food Loss & Waste</h3>
+                <h3>Data in Food Loss &amp; Waste</h3>
                 <div className="program-level">Intermediate • 4 weeks</div>
                 <p>
                   Learn advanced techniques to measure, analyze, and reduce food 
@@ -253,7 +262,6 @@ export default function WhatWeDo() {
             Since founding our practice in 2020, we have delivered analytics solutions 
             with measurable impact across diverse food system challenges.
           </p>
-          
           <div className="stats-grid">
             <div className="stat-card">
               <div className="stat-number">50+</div>
@@ -261,14 +269,12 @@ export default function WhatWeDo() {
                 Organizations supported with analytics solutions
               </div>
             </div>
-            
             <div className="stat-card">
               <div className="stat-number">$2.3M</div>
               <div className="stat-label">
                 In estimated food waste reduction through our predictive models
               </div>
             </div>
-            
             <div className="stat-card">
               <div className="stat-number">15K+</div>
               <div className="stat-label">
