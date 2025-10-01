@@ -9,25 +9,16 @@ export async function POST(request: NextRequest) {
 
     if (honeypot) {
       console.log('Bot detected via honeypot field');
-      return NextResponse.redirect(
-        new URL('/?success=true', request.url), 
-        303
-      );
+      return NextResponse.redirect('/?success=true', 303);
     }
 
     if (!email) {
-      return NextResponse.redirect(
-        new URL('/?error=Email is required', request.url), 
-        303
-      );
+      return NextResponse.redirect('/?error=Email is required', 303);
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.redirect(
-        new URL('/?error=Invalid email address', request.url), 
-        303
-      );
+      return NextResponse.redirect('/?error=Invalid email address', 303);
     }
 
     const subscriber = await prisma.subscriber.upsert({
@@ -38,21 +29,15 @@ export async function POST(request: NextRequest) {
 
     console.log('New subscriber:', subscriber);
 
-    return NextResponse.redirect(
-      new URL('/?success=true', request.url), 
-      303
-    );
+    return NextResponse.redirect('/?success=true', 303);
   } catch (error) {
     const prismaError = error as Error & { code?: string };
     if (prismaError.code === 'P2002') {
-      return NextResponse.redirect(
-        new URL('/?success=true', request.url), 
-        303
-      );
+      return NextResponse.redirect('/?success=true', 303);
     }
     console.error('Subscription error:', error);
     return NextResponse.redirect(
-      new URL('/?error=Failed to subscribe. Please try again.', request.url), 
+      '/?error=Failed to subscribe. Please try again.',
       303
     );
   }
