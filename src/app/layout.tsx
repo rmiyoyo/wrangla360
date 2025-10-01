@@ -37,29 +37,44 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {`
             (function() {
               const siteKey = "${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}";
+              console.log('=== reCAPTCHA DEBUG ===');
+              console.log('Site Key Loaded:', siteKey ? siteKey.substring(0, 10) + '...' : 'MISSING');
+              console.log('reCAPTCHA Script Src:', document.querySelector('script[src*="recaptcha/enterprise.js"]')?.src || 'NOT FOUND');
 
-              function handleSubmit(formId: string, tokenId: string, action: string) {
+              function handleSubmit(formId, tokenId, action) {
                 const form = document.getElementById(formId);
-                if (!form) return;
+                if (!form) {
+                  console.log('Form not found:', formId);
+                  return;
+                }
 
                 form.addEventListener('submit', async function(e) {
                   e.preventDefault();
+                  console.log('Form Submit Intercepted:', formId, action);
+                  const tokenInput = document.getElementById(tokenId);
+                  console.log('Token Input Before:', tokenInput?.value || 'EMPTY');
+
                   if (grecaptcha && grecaptcha.enterprise) {
                     try {
+                      console.log('reCAPTCHA API Available');
                       await grecaptcha.enterprise.ready();
+                      console.log('reCAPTCHA Ready');
                       const token = await grecaptcha.enterprise.execute(siteKey, { action: action });
-                      const tokenInput = document.getElementById(tokenId) as HTMLInputElement;
+                      console.log('Token Generated:', token ? token.substring(0, 20) + '...' : 'FAILED');
                       if (tokenInput) {
                         tokenInput.value = token;
-                        form.submit();
+                        console.log('Token Set in Input');
+                        form.submit();  // Native submit to preserve redirects
+                      } else {
+                        console.log('Token Input Not Found:', tokenId);
                       }
                     } catch (error) {
-                      console.error('reCAPTCHA Enterprise error:', error);
+                      console.error('reCAPTCHA Execute Error:', error);
                       alert('Verification failed. Please try again.');
                     }
                   } else {
-                    console.error('reCAPTCHA not loaded');
-                    alert('reCAPTCHA not loaded. Please refresh the page.');
+                    console.error('reCAPTCHA Not Loaded');
+                    alert('reCAPTCHA not loaded. Please refresh and try again.');
                   }
                 });
               }
@@ -72,8 +87,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               }
 
               function initHandlers() {
+                console.log('Initializing Handlers');
                 handleSubmit('contact-form', 'contact-recaptcha-token', 'contact');
                 handleSubmit('subscribe-form', 'subscribe-recaptcha-token', 'subscribe');
+                console.log('Handlers Attached');
               }
             })();
           `}
