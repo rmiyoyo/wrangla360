@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
@@ -9,24 +11,23 @@ export async function POST(request: NextRequest) {
     const organization = formData.get('organization') as string | null;
     const message = formData.get('message') as string;
     const honeypot = formData.get('website') as string;
-    const baseUrl = request.nextUrl.origin; // 👈 ensures https://wrangla360.com
 
     if (honeypot) {
-      return NextResponse.redirect(`${baseUrl}/contact?success=true`, 303);
+      return NextResponse.redirect(`${BASE_URL}/contact?success=true`, 303);
     }
 
     if (!name || !email || !message) {
-      return NextResponse.redirect(`${baseUrl}/contact?error=Missing required fields`, 303);
+      return NextResponse.redirect(`${BASE_URL}/contact?error=Missing required fields`, 303);
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.redirect(`${baseUrl}/contact?error=Invalid email address`, 303);
+      return NextResponse.redirect(`${BASE_URL}/contact?error=Invalid email address`, 303);
     }
 
     if (message.length < 10 || message.length > 5000) {
       return NextResponse.redirect(
-        `${baseUrl}/contact?error=Message must be between 10 and 5000 characters`,
+        `${BASE_URL}/contact?error=Message must be between 10 and 5000 characters`,
         303
       );
     }
@@ -35,17 +36,17 @@ export async function POST(request: NextRequest) {
     const capsRatio = (message.match(/[A-Z]/g) || []).length / message.length;
 
     if (linkCount > 3 || capsRatio > 0.5) {
-      return NextResponse.redirect(`${baseUrl}/contact?error=Message appears to be spam`, 303);
+      return NextResponse.redirect(`${BASE_URL}/contact?error=Message appears to be spam`, 303);
     }
 
     await prisma.contact.create({
       data: { name, email, organization: organization || null, message },
     });
 
-    return NextResponse.redirect(`${baseUrl}/contact?success=true`, 303);
+    return NextResponse.redirect(`${BASE_URL}/contact?success=true`, 303);
   } catch (error) {
     return NextResponse.redirect(
-      `${request.nextUrl.origin}/contact?error=Failed to submit form. Please try again.`,
+      `${BASE_URL}/contact?error=Failed to submit form. Please try again.`,
       303
     );
   }
