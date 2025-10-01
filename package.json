@@ -14,12 +14,15 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@google-cloud/recaptcha-enterprise": "^6.3.0",
     "@prisma/client": "^6.15.0",
+    "@types/nodemailer": "^7.0.2",
     "bcryptjs": "^3.0.2",
     "bootstrap": "^5.3.8",
     "dotenv": "^17.2.1",
     "next": "15.5.2",
     "next-auth": "^4.24.11",
+    "nodemailer": "^6.10.1",
     "prisma": "^6.15.0",
     "react": "19.1.0",
     "react-bootstrap": "^2.10.10",

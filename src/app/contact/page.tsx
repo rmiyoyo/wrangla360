@@ -1,12 +1,16 @@
 import './contact.css';
 import Link from 'next/link';
+import Script from 'next/script';
 
-export const metadata = {
-  title: 'Contact Us | Wrangla 360',
-  description: 'Get in touch with Wrangla 360 to learn more about our data-driven sustainability solutions for food systems.',
-};
+// Helper to get success message from URL
+function getSuccessMessage(searchParams: { [key: string]: string | string[] | undefined }): string | null {
+  const success = searchParams.success;
+  return typeof success === 'string' ? success : null;
+}
 
-export default function Contact() {
+export default function Contact({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
+  const successMessage = getSuccessMessage(searchParams);
+
   return (
     <>
       <section className="contact-hero">
@@ -23,25 +27,31 @@ export default function Contact() {
           <p className="contact-subtitle">
             Fill out the form below, and our team will respond within 1-2 business days.
           </p>
-          <div className="contact-form">
+          {successMessage && (
+            <div className="success-message" style={{ color: 'green', padding: '1rem', background: '#d4edda', borderRadius: '4px', marginBottom: '1rem' }}>
+              {successMessage}
+            </div>
+          )}
+          <form id="contact-form" action="/api/contact" method="POST" className="contact-form">
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input type="text" id="name" placeholder="Your name" />
+              <input type="text" id="name" name="name" placeholder="Your name" required />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" placeholder="Your email" />
+              <input type="email" id="email" name="email" placeholder="Your email" required />
             </div>
             <div className="form-group">
               <label htmlFor="organization">Organization</label>
-              <input type="text" id="organization" placeholder="Your organization (optional)" />
+              <input type="text" id="organization" name="organization" placeholder="Your organization (optional)" />
             </div>
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" placeholder="Your message" rows={5}></textarea>
+              <textarea id="message" name="message" placeholder="Your message" rows={5} required></textarea>
             </div>
-            <button className="submit-btn">Send Message</button>
-          </div>
+            <input type="hidden" name="g-recaptcha-response" id="contact-recaptcha-token" />
+            <button type="submit" className="submit-btn">Send Message</button>
+          </form>
         </div>
       </section>
       <section className="contact-info">

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import MobileMenu from './components/MobileMenu';
+import Script from 'next/script';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -17,13 +18,66 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
+        <Script
+          src={`https://www.google.com/recaptcha/enterprise.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+          async
+          defer
+        />
+        <Script
+          id="recaptcha-v3-handlers"
+          strategy="afterInteractive"
+        >
+          {`
+            (function() {
+              const siteKey = "${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}";
+
+              function handleSubmit(formId: string, tokenId: string, action: string) {
+                const form = document.getElementById(formId);
+                if (!form) return;
+
+                form.addEventListener('submit', async function(e) {
+                  e.preventDefault();
+                  if (grecaptcha && grecaptcha.enterprise) {
+                    try {
+                      await grecaptcha.enterprise.ready();
+                      const token = await grecaptcha.enterprise.execute(siteKey, { action: action });
+                      const tokenInput = document.getElementById(tokenId) as HTMLInputElement;
+                      if (tokenInput) {
+                        tokenInput.value = token;
+                        form.submit();
+                      }
+                    } catch (error) {
+                      console.error('reCAPTCHA Enterprise error:', error);
+                      alert('Verification failed. Please try again.');
+                    }
+                  } else {
+                    console.error('reCAPTCHA not loaded');
+                    alert('reCAPTCHA not loaded. Please refresh the page.');
+                  }
+                });
+              }
+
+              // Wait for DOM ready
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initHandlers);
+              } else {
+                initHandlers();
+              }
+
+              function initHandlers() {
+                handleSubmit('contact-form', 'contact-recaptcha-token', 'contact');
+                handleSubmit('subscribe-form', 'subscribe-recaptcha-token', 'subscribe');
+              }
+            })();
+          `}
+        </Script>
         <nav>
           <div className="nav-logo-container">
             <Link href="/">
@@ -69,10 +123,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="footer-newsletter">
                 <h3 className="footer-heading">Stay Updated</h3>
                 <p className="footer-newsletter-text">Subscribe to our newsletter for the latest updates.</p>
-                <div className="newsletter-input">
-                  <input type="email" placeholder="Enter your email" />
-                  <button className="newsletter-btn">Subscribe</button>
-                </div>
+                <form id="subscribe-form" action="/api/subscribe" method="POST" className="newsletter-form">
+                  <div className="newsletter-input">
+                    <input type="email" name="email" placeholder="Enter your email" required />
+                    <input type="hidden" name="g-recaptcha-response" id="subscribe-recaptcha-token" />
+                    <button type="submit" className="newsletter-btn">Subscribe</button>
+                  </div>
+                </form>
               </div>
             </div>
             <p className="footer-copyright">© {currentYear} Wrangla 360. All rights reserved.</p>
