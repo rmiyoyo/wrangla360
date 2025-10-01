@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const contact = await prisma.contact.create({
+    await prisma.contact.create({
       data: {
         name,
         email,

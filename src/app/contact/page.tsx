@@ -15,7 +15,7 @@ export default function Contact({
         <div className="contact-hero-content">
           <h1>Contact Wrangla 360</h1>
           <p>
-            We're here to help you transform food systems with data-driven solutions. Reach out to discuss your needs or learn more about our services.
+            We&apos;re here to help you transform food systems with data-driven solutions. Reach out to discuss your needs or learn more about our services.
           </p>
         </div>
       </section>
@@ -36,7 +36,7 @@ export default function Contact({
               borderRadius: '4px', 
               marginBottom: '1rem' 
             }}>
-              Thank you for contacting us! We'll get back to you within 1-2 business days.
+              Thank you for contacting us! We&apos;ll get back to you within 1-2 business days.
             </div>
           )}
 
