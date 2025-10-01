@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,7 +11,6 @@ export async function POST(request: NextRequest) {
     const honeypot = formData.get('website') as string;
 
     if (honeypot) {
-      console.log('Bot detected via honeypot field');
       return NextResponse.redirect(
         new URL('/contact?success=true', request.url), 
         303
@@ -26,7 +24,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.redirect(
@@ -46,7 +43,6 @@ export async function POST(request: NextRequest) {
     const capsRatio = (message.match(/[A-Z]/g) || []).length / message.length;
     
     if (linkCount > 3 || capsRatio > 0.5) {
-      console.log('Potential spam detected');
       return NextResponse.redirect(
         new URL('/contact?error=Message appears to be spam', request.url), 
         303
@@ -62,43 +58,11 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Send email notification using Nodemailer
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: process.env.SMTP_SECURE === 'true',
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: '"Wrangla 360" <no-reply@wrangla360.com>',
-      to: 'info@wrangla360.com',
-      subject: 'New Contact Form Submission',
-      text: `
-        New contact form submission:
-        Name: ${name}
-        Email: ${email}
-        Organization: ${organization || 'N/A'}
-        Message: ${message}
-      `,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Organization:</strong> ${organization || 'N/A'}</p>
-        <p><strong>Message:</strong> ${message}</p>
-      `,
-    });
-
     return NextResponse.redirect(
       new URL('/contact?success=true', request.url), 
       303
     );
   } catch (error) {
-    console.error('Contact submission error:', error);
     return NextResponse.redirect(
       new URL('/contact?error=Failed to submit form. Please try again.', request.url), 
       303

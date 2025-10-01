@@ -2,11 +2,47 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { prisma } from '@/lib/db';
 
-export default async function Home() {
+export default async function Home({ 
+  searchParams 
+}: { 
+  searchParams: { [key: string]: string | string[] | undefined } 
+}) {
   const articles = await prisma.article.findMany({ take: 2 });
+  const success = searchParams.success === 'true';
+  const error = typeof searchParams.error === 'string' ? searchParams.error : null;
 
   return (
     <>
+      {success && (
+        <div style={{ 
+          color: '#155724', 
+          padding: '1rem', 
+          background: '#d4edda', 
+          border: '1px solid #c3e6cb',
+          borderRadius: '4px', 
+          margin: '1rem auto',
+          maxWidth: '1200px',
+          textAlign: 'center'
+        }}>
+          Thanks for subscribing! You&apos;ll receive updates from Wrangla 360.
+        </div>
+      )}
+
+      {error && (
+        <div style={{ 
+          color: '#721c24', 
+          padding: '1rem', 
+          background: '#f8d7da', 
+          border: '1px solid #f5c6cb',
+          borderRadius: '4px', 
+          margin: '1rem auto',
+          maxWidth: '1200px',
+          textAlign: 'center'
+        }}>
+          {error}
+        </div>
+      )}
+
       <section className="hero">
         <div className="hero-content">
           <h1>Our mission is to drive insights and action with analytics and data</h1>
