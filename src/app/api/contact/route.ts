@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import nodemailer from 'nodemailer';
-import { createAssessment } from '@/lib/recaptcha';
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,28 +9,48 @@ export async function POST(request: NextRequest) {
     const email = formData.get('email') as string;
     const organization = formData.get('organization') as string | null;
     const message = formData.get('message') as string;
-    const recaptchaToken = formData.get('g-recaptcha-response') as string;
+    const honeypot = formData.get('website') as string;
 
-    if (!name || !email || !message || !recaptchaToken) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    if (honeypot) {
+      console.log('Bot detected via honeypot field');
+      return NextResponse.redirect(
+        new URL('/contact?success=true', request.url), 
+        303
+      );
     }
 
-    // Verify reCAPTCHA Enterprise
-    const score = await createAssessment({
-      projectID: process.env.RECAPTCHA_PROJECT_ID!,
-      recaptchaKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
-      token: recaptchaToken,
-      recaptchaAction: 'contact',
-    });
-
-    if (!score || score < 0.5) {
-      return NextResponse.json({ error: 'reCAPTCHA verification failed' }, { status: 400 });
+    if (!name || !email || !message) {
+      return NextResponse.redirect(
+        new URL('/contact?error=Missing required fields', request.url), 
+        303
+      );
     }
 
     // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
+      return NextResponse.redirect(
+        new URL('/contact?error=Invalid email address', request.url), 
+        303
+      );
+    }
+
+    if (message.length < 10 || message.length > 5000) {
+      return NextResponse.redirect(
+        new URL('/contact?error=Message must be between 10 and 5000 characters', request.url), 
+        303
+      );
+    }
+
+    const linkCount = (message.match(/https?:\/\//g) || []).length;
+    const capsRatio = (message.match(/[A-Z]/g) || []).length / message.length;
+    
+    if (linkCount > 3 || capsRatio > 0.5) {
+      console.log('Potential spam detected');
+      return NextResponse.redirect(
+        new URL('/contact?error=Message appears to be spam', request.url), 
+        303
+      );
     }
 
     const contact = await prisma.contact.create({
@@ -74,10 +93,15 @@ export async function POST(request: NextRequest) {
       `,
     });
 
-    // Redirect to contact page with success message
-    return NextResponse.redirect(new URL('/contact?success=Thank you! We\'ll get back to you soon.', request.url), 303);
+    return NextResponse.redirect(
+      new URL('/contact?success=true', request.url), 
+      303
+    );
   } catch (error) {
     console.error('Contact submission error:', error);
-    return NextResponse.json({ error: 'Failed to submit form' }, { status: 500 });
+    return NextResponse.redirect(
+      new URL('/contact?error=Failed to submit form. Please try again.', request.url), 
+      303
+    );
   }
 }

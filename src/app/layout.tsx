@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import MobileMenu from './components/MobileMenu';
-import Script from 'next/script';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -18,101 +17,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const currentYear = new Date().getFullYear();
-
+  
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
-        <Script
-          src={`https://www.google.com/recaptcha/enterprise.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-          async
-          defer
-        />
-        <Script
-          id="recaptcha-v3-handlers"
-          strategy="afterInteractive"
-        >
-          {`
-            (function() {
-              const siteKey = "${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}";
-              console.log('=== reCAPTCHA DEBUG ===');
-              console.log('Site Key Loaded:', siteKey ? siteKey.substring(0, 10) + '...' : 'MISSING');
-
-              // Helper to execute reCAPTCHA with Promise wrapper
-              function executeRecaptcha(action) {
-                return new Promise((resolve, reject) => {
-                  if (!grecaptcha || !grecaptcha.enterprise) {
-                    reject(new Error('reCAPTCHA Enterprise not available'));
-                    return;
-                  }
-
-                  grecaptcha.enterprise.ready(() => {
-                    console.log('reCAPTCHA Ready');  // Debug
-                    try {
-                      grecaptcha.enterprise.execute(siteKey, { action: action })
-                        .then((token) => {
-                          console.log('Token Generated:', token ? token.substring(0, 20) + '...' : 'FAILED');  // Debug
-                          resolve(token);
-                        })
-                        .catch((error) => {
-                          console.error('reCAPTCHA Execute Error:', error);  // Already logging
-                          reject(error);
-                        });
-                    } catch (error) {
-                      console.error('reCAPTCHA Error in ready callback:', error);
-                      reject(error);
-                    }
-                  });
-                });
-              }
-
-              function handleSubmit(formId, tokenId, action) {
-                const form = document.getElementById(formId);
-                if (!form) {
-                  console.log('Form not found:', formId);  // Debug
-                  return;
-                }
-
-                form.addEventListener('submit', async function(e) {
-                  e.preventDefault();
-                  console.log('Form Submit Intercepted:', formId, action);  // Debug
-                  const tokenInput = document.getElementById(tokenId);
-                  console.log('Token Input Before:', tokenInput?.value || 'EMPTY');  // Debug
-
-                  try {
-                    const token = await executeRecaptcha(action);
-                    if (tokenInput) {
-                      tokenInput.value = token;
-                      console.log('Token Set in Input');  // Debug
-                      form.submit();  // Native submit for redirects
-                    } else {
-                      console.log('Token Input Not Found:', tokenId);  // Debug
-                    }
-                  } catch (error) {
-                    console.error('Overall reCAPTCHA Error:', error);
-                    alert('Verification failed. Please try again.');
-                  }
-                });
-              }
-
-              // Wait for DOM ready
-              if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initHandlers);
-              } else {
-                initHandlers();
-              }
-
-              function initHandlers() {
-                console.log('Initializing Handlers');  // Debug
-                handleSubmit('contact-form', 'contact-recaptcha-token', 'contact');
-                handleSubmit('subscribe-form', 'subscribe-recaptcha-token', 'subscribe');
-                console.log('Handlers Attached');  // Debug
-              }
-            })();
-          `}
-        </Script>
         <nav>
           <div className="nav-logo-container">
             <Link href="/">
@@ -135,7 +46,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <MobileMenu />
         </nav>
+        
         <main>{children}</main>
+        
         <footer>
           <div className="footer-content">
             <div className="footer-grid">
@@ -143,30 +56,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <div className="nav-logo"></div>
                 <p className="footer-description">Wrangla 360 provides data-driven solutions for sustainable outcomes.</p>
               </div>
+              
               <div className="footer-links">
                 <h3 className="footer-heading">Quick Links</h3>
                 <Link href="/privacy">Privacy Policy</Link>
                 <Link href="/terms">Terms of Service</Link>
                 <Link href="/contact">Contact Us</Link>
               </div>
+              
               <div className="footer-social">
                 <h3 className="footer-heading">Follow Us</h3>
                 <Link href="https://www.linkedin.com/company/wrangla360-consulting/">LinkedIn</Link>
                 <Link href="/twitter">X (Formerly Twitter)</Link>
                 <Link href="/instagram">Instagram</Link>
               </div>
+              
               <div className="footer-newsletter">
                 <h3 className="footer-heading">Stay Updated</h3>
                 <p className="footer-newsletter-text">Subscribe to our newsletter for the latest updates.</p>
                 <form id="subscribe-form" action="/api/subscribe" method="POST" className="newsletter-form">
                   <div className="newsletter-input">
                     <input type="email" name="email" placeholder="Enter your email" required />
-                    <input type="hidden" name="g-recaptcha-response" id="subscribe-recaptcha-token" />
+                    <input 
+                      type="text" 
+                      name="website" 
+                      tabIndex={-1}
+                      autoComplete="off"
+                      style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
+                      aria-hidden="true"
+                    />
                     <button type="submit" className="newsletter-btn">Subscribe</button>
                   </div>
                 </form>
               </div>
             </div>
+            
             <p className="footer-copyright">© {currentYear} Wrangla 360. All rights reserved.</p>
           </div>
         </footer>
