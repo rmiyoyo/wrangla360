@@ -21,6 +21,7 @@ export default function MobileMenu() {
         <div className="mobile-menu-overlay" onClick={() => setIsOpen(false)}>
           <div className="mobile-menu-content" onClick={e => e.stopPropagation()}>
             <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link href="/services" onClick={() => setIsOpen(false)}>Services</Link>
             <Link href="/what-we-do" onClick={() => setIsOpen(false)}>What We Do</Link>
             <Link href="/resources" onClick={() => setIsOpen(false)}>Resources</Link>
             <Link href="/team" onClick={() => setIsOpen(false)}>Team</Link>
