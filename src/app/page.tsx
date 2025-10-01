@@ -5,11 +5,12 @@ import { prisma } from '@/lib/db';
 export default async function Home({ 
   searchParams 
 }: { 
-  searchParams: { [key: string]: string | string[] | undefined } 
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }> 
 }) {
   const articles = await prisma.article.findMany({ take: 2 });
-  const success = searchParams.success === 'true';
-  const error = typeof searchParams.error === 'string' ? searchParams.error : null;
+  const params = await searchParams;
+  const success = params.success === 'true';
+  const error = typeof params.error === 'string' ? params.error : null;
 
   return (
     <>
@@ -81,7 +82,7 @@ export default async function Home({
               <div className="article-content">
                 <h3>{article.title}</h3>
                 <p>{article.excerpt}</p>
-                <Link href={`/article/${article.id}`}>
+                <Link href={`/article/${article.slug}`}>
                   Read more <span aria-hidden="true">→</span>
                 </Link>
               </div>

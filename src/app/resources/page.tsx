@@ -9,7 +9,12 @@ export const metadata = {
 };
 
 export default async function Resources() {
-  const articles = await prisma.article.findMany({ take: 6 });
+  const articles = await prisma.article.findMany({ 
+    take: 6,
+    orderBy: {
+      createdAt: 'desc'
+    }
+  });
   
   return (
     <>
@@ -77,7 +82,7 @@ export default async function Resources() {
                   <h3>{article.title}</h3>
                   <p>{article.excerpt}</p>
                   <div className="article-footer">
-                    <Link href={`/article/${article.id}`} className="article-link">
+                    <Link href={`/article/${article.slug}`} className="article-link">
                       Read Article
                       <span className="link-arrow">→</span>
                     </Link>
