@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.redirect(`${BASE_URL}/contact?success=true`, 303);
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.redirect(
       `${BASE_URL}/contact?error=Failed to submit form. Please try again.`,
       303
