@@ -39,42 +39,60 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               const siteKey = "${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}";
               console.log('=== reCAPTCHA DEBUG ===');
               console.log('Site Key Loaded:', siteKey ? siteKey.substring(0, 10) + '...' : 'MISSING');
-              console.log('reCAPTCHA Script Src:', document.querySelector('script[src*="recaptcha/enterprise.js"]')?.src || 'NOT FOUND');
+
+              // Helper to execute reCAPTCHA with Promise wrapper
+              function executeRecaptcha(action) {
+                return new Promise((resolve, reject) => {
+                  if (!grecaptcha || !grecaptcha.enterprise) {
+                    reject(new Error('reCAPTCHA Enterprise not available'));
+                    return;
+                  }
+
+                  grecaptcha.enterprise.ready(() => {
+                    console.log('reCAPTCHA Ready');  // Debug
+                    try {
+                      grecaptcha.enterprise.execute(siteKey, { action: action })
+                        .then((token) => {
+                          console.log('Token Generated:', token ? token.substring(0, 20) + '...' : 'FAILED');  // Debug
+                          resolve(token);
+                        })
+                        .catch((error) => {
+                          console.error('reCAPTCHA Execute Error:', error);  // Already logging
+                          reject(error);
+                        });
+                    } catch (error) {
+                      console.error('reCAPTCHA Error in ready callback:', error);
+                      reject(error);
+                    }
+                  });
+                });
+              }
 
               function handleSubmit(formId, tokenId, action) {
                 const form = document.getElementById(formId);
                 if (!form) {
-                  console.log('Form not found:', formId);
+                  console.log('Form not found:', formId);  // Debug
                   return;
                 }
 
                 form.addEventListener('submit', async function(e) {
                   e.preventDefault();
-                  console.log('Form Submit Intercepted:', formId, action);
+                  console.log('Form Submit Intercepted:', formId, action);  // Debug
                   const tokenInput = document.getElementById(tokenId);
-                  console.log('Token Input Before:', tokenInput?.value || 'EMPTY');
+                  console.log('Token Input Before:', tokenInput?.value || 'EMPTY');  // Debug
 
-                  if (grecaptcha && grecaptcha.enterprise) {
-                    try {
-                      console.log('reCAPTCHA API Available');
-                      await grecaptcha.enterprise.ready();
-                      console.log('reCAPTCHA Ready');
-                      const token = await grecaptcha.enterprise.execute(siteKey, { action: action });
-                      console.log('Token Generated:', token ? token.substring(0, 20) + '...' : 'FAILED');
-                      if (tokenInput) {
-                        tokenInput.value = token;
-                        console.log('Token Set in Input');
-                        form.submit();  // Native submit to preserve redirects
-                      } else {
-                        console.log('Token Input Not Found:', tokenId);
-                      }
-                    } catch (error) {
-                      console.error('reCAPTCHA Execute Error:', error);
-                      alert('Verification failed. Please try again.');
+                  try {
+                    const token = await executeRecaptcha(action);
+                    if (tokenInput) {
+                      tokenInput.value = token;
+                      console.log('Token Set in Input');  // Debug
+                      form.submit();  // Native submit for redirects
+                    } else {
+                      console.log('Token Input Not Found:', tokenId);  // Debug
                     }
-                  } else {
-                    console.error('reCAPTCHA Not Loaded');
-                    alert('reCAPTCHA not loaded. Please refresh and try again.');
+                  } catch (error) {
+                    console.error('Overall reCAPTCHA Error:', error);
+                    alert('Verification failed. Please try again.');
                   }
                 });
               }
@@ -87,10 +105,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               }
 
               function initHandlers() {
-                console.log('Initializing Handlers');
+                console.log('Initializing Handlers');  // Debug
                 handleSubmit('contact-form', 'contact-recaptcha-token', 'contact');
                 handleSubmit('subscribe-form', 'subscribe-recaptcha-token', 'subscribe');
-                console.log('Handlers Attached');
+                console.log('Handlers Attached');  // Debug
               }
             })();
           `}
