@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.service-detail-hero {
+  background: linear-gradient(135deg, #126F43 0%, #1B9056 100%);
+  color: white;
+  padding: 5rem 5%;
+}
+
+.service-detail-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.service-detail-hero-content h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.service-detail-tagline {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+  line-height: 1.4;
+}
+
+.service-detail-intro {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.service-detail-hero-image {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-detail-content {
+  padding: 6rem 5%;
+  background: white;
+}
+
+.service-detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.service-feature h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #126F43;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.service-feature ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.service-feature li {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #4a5568;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.service-feature li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 8px;
+  height: 8px;
+  background: #35C07A;
+  border-radius: 50%;
+}
+
+.service-feature li strong {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.service-why-matters {
+  background: #f7fafc;
+  padding: 3rem;
+  border-radius: 12px;
+  border-left: 4px solid #35C07A;
+}
+
+.service-why-matters h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #126F43;
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+}
+
+.service-why-matters p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+.service-detail-cta {
+  padding: 5rem 5%;
+  background: #f7fafc;
+  text-align: center;
+}
+
+.service-detail-cta-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.service-detail-cta h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: #126F43;
+}
+
+.service-detail-cta p {
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+.service-detail-cta-btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: #126F43;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.0625rem;
+}
+
+@media (max-width: 768px) {
+  .service-detail-hero {
+    padding: 4rem 5%;
+  }
+
+  .service-detail-hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .service-detail-hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .service-detail-tagline {
+    font-size: 1.125rem;
+  }
+
+  .service-detail-intro {
+    font-size: 1rem;
+  }
+
+  .service-detail-hero-image {
+    height: 320px;
+  }
+
+  .service-detail-content {
+    padding: 4rem 5%;
+  }
+
+  .service-detail-container {
+    gap: 3rem;
+  }
+
+  .service-feature h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-feature li {
+    font-size: 1rem;
+  }
+
+  .service-why-matters {
+    padding: 2rem;
+  }
+
+  .service-why-matters h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-why-matters p {
+    font-size: 1rem;
+  }
+
+  .service-detail-cta {
+    padding: 4rem 5%;
+  }
+
+  .service-detail-cta h2 {
+    font-size: 1.75rem;
+  }
+
+  .service-detail-cta p {
+    font-size: 1rem;
+  }
+
+  .service-detail-cta-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
