@@ -146,7 +146,7 @@ export default function WhatWeDo() {
             </div>
             <div className="service-showcase-content">
               <h3>Systemic Risk Assessment</h3>
-              <h4>Understanding today's risks to prepare for tomorrow's challenges.</h4>
+              <h4>Understanding today&apos;s risks to prepare for tomorrow&apos;s challenges.</h4>
               <p>
                 We map the current state of your food, agriculture, or social systems. Through comprehensive data collection, system diagnostics, and vulnerability analysis, we identify strengths, gaps, and risks. This provides a clear baseline to guide informed decision-making and ensures interventions are grounded in evidence.
               </p>
