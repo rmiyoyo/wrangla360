@@ -10,12 +10,24 @@ export const metadata = {
 export default function Services() {
   return (
     <>
-      <section className="services-hero">
-        <div className="services-hero-container">
-          <h1>How we help you succeed</h1>
-          <p className="services-hero-description">
-            We believe that strong decisions start with evidence and lead to lasting change. Our services are designed as a connected journey: first, we assess risks in the system; then, we forecast the future with predictive analytics; and finally, we translate insights into inclusive action for social impact.
-          </p>
+      <section className="hero-enhanced">
+        <div className="hero-enhanced-content">
+          <div>
+            <h1>How we help you succeed</h1>
+            <p>
+              We believe that strong decisions start with evidence and lead to lasting change. Our services are designed as a connected journey: first, we assess risks in the system; then, we forecast the future with predictive analytics; and finally, we translate insights into inclusive action for social impact.
+            </p>
+          </div>
+          <div className="hero-enhanced-image">
+            <Image
+              src="/images/food-security-africa.jpg"
+              alt="Sustainable food systems analytics"
+              width={600}
+              height={500}
+              priority
+              className="hero-enhanced-img"
+            />
+          </div>
         </div>
       </section>
 
