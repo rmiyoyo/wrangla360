@@ -60,20 +60,20 @@ export default function Team() {
               <div className="team-image">
                 <Image
                   src="/member-one.jpg"
-                  alt="Director"
+                  alt="Lead Data Scientist"
                   width={300}
                   height={300}
                   className="team-img"
                 />
               </div>
               <div className="team-content">
-                <h3>Director</h3>
-                <h4>Director</h4>
+                <h3>Lead Data Scientist</h3>
+                <h4>Lead Data Scientist</h4>
                 <p>
-                  With a PhD in Environmental Science and extensive experience in seed systems, 
-                  our Director leads the mission to enhance food system resilience through data-driven strategies.
+                  With a PhD in Environmental Science and extensive experience in data analytics, 
+                  our Lead Data Scientist drives the development of predictive models for food system resilience.
                 </p>
-                <Link href="https://www.linkedin.com/in/director" className="linkedin-link">
+                <Link href="https://www.linkedin.com/in/lead-data-scientist" className="linkedin-link">
                   <LinkedInIcon />
                 </Link>
               </div>
@@ -82,20 +82,20 @@ export default function Team() {
               <div className="team-image">
                 <Image
                   src="/member-two.jpg"
-                  alt="Chief Strategy Officer"
+                  alt="Food Systems &amp; Partnerships Lead"
                   width={300}
                   height={300}
                   className="team-img"
                 />
               </div>
               <div className="team-content">
-                <h3>Chief Strategy Officer</h3>
-                <h4>Chief Strategy Officer</h4>
+                <h3>Food Systems &amp; Partnerships Lead</h3>
+                <h4>Food Systems &amp; Partnerships Lead</h4>
                 <p>
-                  Our Chief Strategy Officer leverages expertise in climate modeling and risk assessment 
-                  to develop innovative strategies for sustainable food production.
+                  Our Food Systems &amp; Partnerships Lead leverages expertise in climate modeling and stakeholder engagement 
+                  to build strategic alliances for sustainable food production.
                 </p>
-                <Link href="https://www.linkedin.com/in/chiefstrategyofficer" className="linkedin-link">
+                <Link href="https://www.linkedin.com/in/food-systems-partnerships-lead" className="linkedin-link">
                   <LinkedInIcon />
                 </Link>
               </div>
@@ -104,20 +104,20 @@ export default function Team() {
               <div className="team-image">
                 <Image
                   src="/member-three.jpg"
-                  alt="Business Development Lead"
+                  alt="Operations &amp; Strategy Manager"
                   width={300}
                   height={300}
                   className="team-img"
                 />
               </div>
               <div className="team-content">
-                <h3>Business Development Lead</h3>
-                <h4>Business Development Lead</h4>
+                <h3>Operations &amp; Strategy Manager</h3>
+                <h4>Operations &amp; Strategy Manager</h4>
                 <p>
-                  Our Business Development Lead drives partnerships and growth, 
+                  Our Operations &amp; Strategy Manager oversees business development and operational excellence, 
                   focusing on scalable solutions to advance sustainable food systems.
                 </p>
-                <Link href="https://www.linkedin.com/in/businessdevelopmentlead" className="linkedin-link">
+                <Link href="https://www.linkedin.com/in/operations-strategy-manager" className="linkedin-link">
                   <LinkedInIcon />
                 </Link>
               </div>
