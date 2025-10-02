@@ -132,9 +132,6 @@ export default function Team() {
             <Link href="/contact" className="cta-enhanced-btn primary">
               Contact us
             </Link>
-            <Link href="/careers" className="cta-enhanced-btn primary">
-              View careers
-            </Link>
           </div>
         </div>
       </section>
