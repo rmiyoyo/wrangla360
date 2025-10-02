@@ -70,8 +70,7 @@ export default function Team() {
                 <h3>Lead Data Scientist</h3>
                 <h4>Lead Data Scientist</h4>
                 <p>
-                  With a PhD in Environmental Science and extensive experience in data analytics, 
-                  our Lead Data Scientist drives the development of predictive models for food system resilience.
+                  Our Lead Data Scientist drives the development of predictive models for food system resilience.
                 </p>
                 <Link href="https://www.linkedin.com/in/lead-data-scientist" className="linkedin-link">
                   <LinkedInIcon />
