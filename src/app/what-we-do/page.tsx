@@ -30,76 +30,13 @@ export default function WhatWeDo() {
           </div>
         </div>
       </section>
+
       <section className="mission-statement">
         <div className="mission-container">
           <h2>We provide analytics solutions to make sustainable food systems accessible to those who need it most.</h2>
         </div>
       </section>
-      <section className="services-showcase">
-        <div className="services-showcase-container">
-          <div className="service-showcase-card primary-card">
-            <div className="service-showcase-image">
-              <Image
-                src="/risk-assessment.jpg"
-                alt="Systemic risk assessment in agriculture"
-                width={400}
-                height={300}
-                className="service-img"
-              />
-            </div>
-            <div className="service-showcase-content">
-              <h3>Systemic Risk Assessment</h3>
-              <h4>Understanding today’s risks to prepare for tomorrow’s challenges.</h4>
-              <p>
-                We map the current state of your food, agriculture, or social systems. Through comprehensive data collection, system diagnostics, and vulnerability analysis, we identify strengths, gaps, and risks. This provides a clear baseline to guide informed decision-making and ensures interventions are grounded in evidence.
-              </p>
-              <Link href="/focus/risk" className="service-showcase-btn">
-                Explore risk solutions
-              </Link>
-            </div>
-          </div>
-          <div className="secondary-services">
-            <div className="secondary-service-card">
-              <h4>Predictive Analytics</h4>
-              <h5>Forecasting the future with confidence.</h5>
-              <p>
-                Building on risk assessments, we use advanced analytics and AI-driven models to anticipate future scenarios. From climate impacts on crop yields to supply chain disruptions, our predictive insights help you plan ahead, minimize uncertainty, and respond proactively rather than reactively.
-              </p>
-              <div className="secondary-service-image">
-                <Image
-                  src="/predictive-analytics.jpg"
-                  alt="Predictive analytics for food systems"
-                  width={300}
-                  height={200}
-                  className="secondary-service-img"
-                />
-              </div>
-              <Link href="/focus/analytics" className="secondary-service-link">
-                Predictive solutions →
-              </Link>
-            </div>
-            <div className="secondary-service-card">
-                <h4>Inclusive Data &amp; Social Impact</h4>
-              <h5>Turning insights into equitable action.</h5>
-              <p>
-                Insights only matter when they drive change. We translate forecasts and risk analyses into inclusive, accessible data solutions that empower communities, policymakers, and businesses. By focusing on equity and social outcomes, we ensure that decisions lead to resilience, sustainability, and lasting impact for all stakeholders.
-              </p>
-              <div className="secondary-service-image">
-                <Image
-                  src="/social-impact.jpg"
-                  alt="Inclusive data for social impact"
-                  width={300}
-                  height={200}
-                  className="secondary-service-img"
-                />
-              </div>
-              <Link href="/focus/impact" className="secondary-service-link">
-                Social impact tools →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <section className="focus-communities">
         <div className="focus-communities-container">
           <h2>Our focus communities</h2>
@@ -121,15 +58,14 @@ export default function WhatWeDo() {
               <div className="community-content">
                 <h3>Smallholder farmers</h3>
                 <p>
-                  Empowering small-scale producers with precision agriculture tools, 
-                  risk assessment frameworks, and market access solutions that 
-                  increase yields while promoting sustainable practices.
+                  Empowering producers with the tools, knowledge, and opportunities to run farms as sustainable businesses. We partner directly with farmers to equip them with skills, data, and resources that increase yields, reduce risks, and open doors to new opportunities.
                 </p>
                 <Link href="/communities/farmers" className="community-btn">
-                  Smallholder solutions
+                  Learn more →
                 </Link>
               </div>
             </div>
+
             <div className="community-card">
               <div className="community-image">
                 <Image
@@ -143,15 +79,14 @@ export default function WhatWeDo() {
               <div className="community-content">
                 <h3>Food companies &amp; supply chains</h3>
                 <p>
-                  Supporting businesses with supply chain analytics, sustainability 
-                  metrics, and risk management tools that reduce waste and 
-                  improve efficiency across operations.
+                  Helping businesses build efficient, resilient, and sustainable supply chains. We partner with businesses across the value chain to deliver analytics, metrics, and tools that reduce waste, manage risks, and unlock new opportunities for efficiency and impact.
                 </p>
                 <Link href="/communities/companies" className="community-btn">
-                  Enterprise solutions
+                  Learn more →
                 </Link>
               </div>
             </div>
+
             <div className="community-card">
               <div className="community-image">
                 <Image
@@ -165,15 +100,14 @@ export default function WhatWeDo() {
               <div className="community-content">
                 <h3>Policy makers &amp; NGOs</h3>
                 <p>
-                  Providing evidence-based insights and monitoring tools for 
-                  food security policies, nutrition programs, and development 
-                  initiatives that create systemic change.
+                  Delivering evidence-based insights and tools for systemic change. We support governments, development agencies, and NGOs with insights and solutions that drive systemic impact, grounded in solid evidence and reliable monitoring.
                 </p>
                 <Link href="/communities/policy" className="community-btn">
-                  Policy tools
+                  Learn more →
                 </Link>
               </div>
             </div>
+
             <div className="community-card">
               <div className="community-image">
                 <Image
@@ -187,18 +121,85 @@ export default function WhatWeDo() {
               <div className="community-content">
                 <h3>Researchers &amp; academics</h3>
                 <p>
-                  Collaborating on cutting-edge research with comprehensive 
-                  datasets, analytical frameworks, and training programs that 
-                  advance food systems science.
+                  Collaborating to advance food systems science and innovation. We work with institutions, scholars, and students to provide high-quality datasets, analytical frameworks, and training opportunities that strengthen research capacity.
                 </p>
                 <Link href="/communities/research" className="community-btn">
-                  Research partnerships
+                  Learn more →
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <section className="services-showcase">
+        <div className="services-showcase-container">
+          <div className="service-showcase-card primary-card">
+            <div className="service-showcase-image">
+              <Image
+                src="/risk-assessment.jpg"
+                alt="Systemic risk assessment in agriculture"
+                width={400}
+                height={300}
+                className="service-img"
+              />
+            </div>
+            <div className="service-showcase-content">
+              <h3>Systemic Risk Assessment</h3>
+              <h4>Understanding today's risks to prepare for tomorrow's challenges.</h4>
+              <p>
+                We map the current state of your food, agriculture, or social systems. Through comprehensive data collection, system diagnostics, and vulnerability analysis, we identify strengths, gaps, and risks. This provides a clear baseline to guide informed decision-making and ensures interventions are grounded in evidence.
+              </p>
+              <Link href="/services/risk-assessment" className="service-showcase-btn">
+                Explore risk solutions
+              </Link>
+            </div>
+          </div>
+
+          <div className="secondary-services">
+            <div className="secondary-service-card">
+              <h4>Predictive Analytics</h4>
+              <h5>Forecasting the future with confidence.</h5>
+              <p>
+                Building on risk assessments, we use advanced analytics and AI-driven models to anticipate future scenarios. From climate impacts on crop yields to supply chain disruptions, our predictive insights help you plan ahead, minimize uncertainty, and respond proactively rather than reactively.
+              </p>
+              <div className="secondary-service-image">
+                <Image
+                  src="/predictive-analytics.jpg"
+                  alt="Predictive analytics for food systems"
+                  width={300}
+                  height={200}
+                  className="secondary-service-img"
+                />
+              </div>
+              <Link href="/services/predictive-analytics" className="secondary-service-link">
+                Predictive solutions →
+              </Link>
+            </div>
+
+            <div className="secondary-service-card">
+              <h4>Inclusive Data &amp; Social Impact</h4>
+              <h5>Turning insights into equitable action.</h5>
+              <p>
+                Insights only matter when they drive change. We translate forecasts and risk analyses into inclusive, accessible data solutions that empower communities, policymakers, and businesses. By focusing on equity and social outcomes, we ensure that decisions lead to resilience, sustainability, and lasting impact for all stakeholders.
+              </p>
+              <div className="secondary-service-image">
+                <Image
+                  src="/social-impact.jpg"
+                  alt="Inclusive data for social impact"
+                  width={300}
+                  height={200}
+                  className="secondary-service-img"
+                />
+              </div>
+              <Link href="/services/social-impact" className="secondary-service-link">
+                Social impact tools →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="training-programs">
         <div className="training-container">
           <h2>Build expertise through our training programs</h2>
@@ -223,11 +224,12 @@ export default function WhatWeDo() {
                   <span>Problem-solving frameworks</span>
                   <span>Real-world case studies</span>
                 </div>
-                <Link href="/courses/data-analyst" className="program-btn primary">
-                  Start learning
+                <Link href="/contact" className="program-btn primary">
+                  Get in touch
                 </Link>
               </div>
             </div>
+
             <div className="secondary-programs">
               <div className="program-card">
                 <h3>Data in Food Loss &amp; Waste</h3>
@@ -236,10 +238,11 @@ export default function WhatWeDo() {
                   Learn advanced techniques to measure, analyze, and reduce food 
                   waste across supply chains using data-driven approaches.
                 </p>
-                <Link href="/courses/food-waste" className="program-btn secondary">
-                  Learn more
+                <Link href="/contact" className="program-btn secondary">
+                  Get in touch
                 </Link>
               </div>
+
               <div className="program-card">
                 <h3>Precision Agriculture Analytics</h3>
                 <div className="program-level">Advanced • 8 weeks</div>
@@ -247,43 +250,15 @@ export default function WhatWeDo() {
                   Master IoT integration, predictive modeling, and resource 
                   optimization for modern agricultural systems.
                 </p>
-                <Link href="/courses/precision-agriculture" className="program-btn secondary">
-                  Learn more
+                <Link href="/contact" className="program-btn secondary">
+                  Get in touch
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="impact-stats">
-        <div className="impact-container">
-          <h2>What we have achieved</h2>
-          <p className="impact-subtitle">
-            Since founding our practice in 2020, we have delivered analytics solutions 
-            with measurable impact across diverse food system challenges.
-          </p>
-          <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">
-                Organizations supported with analytics solutions
-              </div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">$2.3M</div>
-              <div className="stat-label">
-                In estimated food waste reduction through our predictive models
-              </div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">15K+</div>
-              <div className="stat-label">
-                Smallholder farmers reached through our risk assessment tools
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <section className="cta-enhanced">
         <div className="cta-enhanced-content">
           <h2>Ready to transform your approach to sustainable food systems?</h2>
