@@ -92,7 +92,7 @@ export default function ResearchPage() {
 
       <section className="community-cta">
         <div className="community-cta-container">
-          <h2>Let's push the boundaries of food systems research—together.</h2>
+          <h2>Let&apos;s push the boundaries of food systems research—together.</h2>
           <Link href="/contact" className="community-cta-btn">
             Contact Us
           </Link>

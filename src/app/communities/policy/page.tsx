@@ -92,7 +92,7 @@ export default function PolicyPage() {
 
       <section className="community-cta">
         <div className="community-cta-container">
-          <h2>Let's design smarter policies and programs that drive sustainable development.</h2>
+          <h2>Let&apos;s design smarter policies and programs that drive sustainable development.</h2>
           <Link href="/contact" className="community-cta-btn">
             Contact Us
           </Link>

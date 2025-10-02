@@ -82,7 +82,7 @@ export default function FarmersPage() {
           <div className="approach-item">
             <h3>Training and Capacity Building</h3>
             <p>
-              We don't just deliver tools—we build lasting skills. From financial literacy to sustainable practices, we train farmers to run farms as resilient agribusinesses, ready to adapt to climate and market changes.
+              We don&apos;t just deliver tools—we build lasting skills. From financial literacy to sustainable practices, we train farmers to run farms as resilient agribusinesses, ready to adapt to climate and market changes.
             </p>
           </div>
         </div>

@@ -73,7 +73,7 @@ export default function CompaniesPage() {
           </div>
 
           <div className="approach-item">
-            <h3>Training & Capacity Building</h3>
+            <h3>Training &amp; Capacity Building</h3>
             <p>
               We work with business teams to build in-house capacity for data-driven decision-making. From interpreting dashboards to applying sustainability insights, our training ensures your staff are equipped to keep improving beyond project timelines.
             </p>
@@ -92,7 +92,7 @@ export default function CompaniesPage() {
 
       <section className="community-cta">
         <div className="community-cta-container">
-          <h2>Let's create supply chains that are efficient, resilient, and future-ready.</h2>
+          <h2>Let&#39;s create supply chains that are efficient, resilient, and future-ready.</h2>
           <Link href="/contact" className="community-cta-btn">
             Contact Us
           </Link>
