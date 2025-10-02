@@ -55,7 +55,7 @@ export default function CompaniesPage() {
           <div className="approach-item">
             <h3>Sustainability Metrics</h3>
             <p>
-              Sustainability is no longer optional—it's a business imperative. We design measurement frameworks to track resource use, emissions, and social impact across supply chains. With clear, actionable metrics, companies can set targets, report progress, and strengthen their ESG performance.
+              Sustainability is no longer optional—it&apos;s a business imperative. We design measurement frameworks to track resource use, emissions, and social impact across supply chains. With clear, actionable metrics, companies can set targets, report progress, and strengthen their ESG performance.
             </p>
             <Link href="/services/social-impact" className="approach-link">
               Learn about Inclusive Data for Social Impact →
