@@ -94,13 +94,13 @@ export default async function Home({
       <section className="focus-section">
         <h2>Our focus</h2>
         <div className="focus-grid">
-          <Link href="focus/risk" className="focus-item">
+          <Link href="services/risk-assessment" className="focus-item">
             Systemic risk assessment
           </Link>
-          <Link href="focus/analytics" className="focus-item">
+          <Link href="services/predictive-analytics" className="focus-item">
             Predictive analytics
           </Link>
-          <Link href="focus/impact" className="focus-item">
+          <Link href="services/social-impact" className="focus-item">
             Inclusive data and social impact
           </Link>
         </div>
