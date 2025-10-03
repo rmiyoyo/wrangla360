@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import './team.css';
 
@@ -20,6 +19,63 @@ const LinkedInIcon = () => (
   </svg>
 );
 
+const DataStrategyIcon = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="80" 
+    height="80" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="1.5" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+    className="team-role-icon"
+  >
+    <line x1="12" y1="20" x2="12" y2="10" />
+    <line x1="18" y1="20" x2="18" y2="4" />
+    <line x1="6" y1="20" x2="6" y2="16" />
+  </svg>
+);
+
+const PartnershipsIcon = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="80" 
+    height="80" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="1.5" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+    className="team-role-icon"
+  >
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>
+);
+
+const ProductIcon = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="80" 
+    height="80" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="1.5" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+    className="team-role-icon"
+  >
+    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+  </svg>
+);
+
 export default function Team() {
   return (
     <>
@@ -32,91 +88,54 @@ export default function Team() {
               business development, and seed systems expertise to deliver impactful sustainability solutions.
             </p>
           </div>
-          <div className="hero-enhanced-image">
-            <Image
-              src="/team-collaboration.jpg"
-              alt="Team collaboration in sustainable food systems"
-              width={600}
-              height={500}
-              priority
-              className="hero-enhanced-img"
-            />
-          </div>
         </div>
       </section>
+
       <section className="team-mission">
         <div className="mission-container">
           <h2>We are committed to transforming food systems through collaborative expertise and innovative analytics.</h2>
         </div>
       </section>
+
       <section className="team-showcase">
         <div className="team-showcase-container">
           <h2>Our Leadership Team</h2>
           <p className="team-subtitle">
             Our team consists of professionals with experience in data science, risk assessment, climate modelling, business development and seed systems.
           </p>
+          
           <div className="team-grid">
             <div className="team-card">
-              <div className="team-image">
-                <Image
-                  src="/member-one.jpg"
-                  alt="Lead Data Scientist"
-                  width={300}
-                  height={300}
-                  className="team-img"
-                />
+              <div className="team-icon-wrapper">
+                <DataStrategyIcon />
               </div>
               <div className="team-content">
-                <h3>Lead Data Scientist</h3>
-                <h4>Lead Data Scientist</h4>
-                <p>
-                  Our Lead Data Scientist drives the development of predictive models for food system resilience.
-                </p>
-                <Link href="https://www.linkedin.com/in/lead-data-scientist" className="linkedin-link">
+                <h3>Director - Data & Strategy</h3>
+                <Link href="#" className="linkedin-link">
                   <LinkedInIcon />
                 </Link>
               </div>
             </div>
+
             <div className="team-card">
-              <div className="team-image">
-                <Image
-                  src="/member-two.jpg"
-                  alt="Food Systems &amp; Partnerships Lead"
-                  width={300}
-                  height={300}
-                  className="team-img"
-                />
+              <div className="team-icon-wrapper">
+                <PartnershipsIcon />
               </div>
               <div className="team-content">
-                <h3>Food Systems &amp; Partnerships Lead</h3>
-                <h4>Food Systems &amp; Partnerships Lead</h4>
-                <p>
-                  Our Food Systems &amp; Partnerships Lead leverages expertise in climate modeling and stakeholder engagement 
-                  to build strategic alliances for sustainable food production.
-                </p>
-                <Link href="https://www.linkedin.com/in/food-systems-partnerships-lead" className="linkedin-link">
+                <h3>Director - Partnerships</h3>
+                <Link href="#" className="linkedin-link">
                   <LinkedInIcon />
                 </Link>
               </div>
             </div>
+
             <div className="team-card">
-              <div className="team-image">
-                <Image
-                  src="/member-three.jpg"
-                  alt="Operations &amp; Strategy Manager"
-                  width={300}
-                  height={300}
-                  className="team-img"
-                />
+              <div className="team-icon-wrapper">
+                <ProductIcon />
               </div>
               <div className="team-content">
-                <h3>Operations &amp; Strategy Manager</h3>
-                <h4>Operations &amp; Strategy Manager</h4>
-                <p>
-                  Our Operations &amp; Strategy Manager oversees business development and operational excellence, 
-                  focusing on scalable solutions to advance sustainable food systems.
-                </p>
-                <Link href="https://www.linkedin.com/in/operations-strategy-manager" className="linkedin-link">
+                <h3>Director - Product Development</h3>
+                <Link href="#" className="linkedin-link">
                   <LinkedInIcon />
                 </Link>
               </div>
@@ -124,6 +143,7 @@ export default function Team() {
           </div>
         </div>
       </section>
+
       <section className="cta-enhanced">
         <div className="cta-enhanced-content">
           <h2>Join our mission for sustainable food systems</h2>

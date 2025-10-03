@@ -24,20 +24,15 @@
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 4rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   position: relative;
   z-index: 2;
 }
 
 .hero-enhanced-content > div:first-child {
-  flex: 1;
-  max-width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  max-width: 900px;
 }
 
 .hero-enhanced-content h1 {
@@ -53,40 +48,9 @@
   opacity: 0.9;
 }
 
-.hero-enhanced-image {
-  flex: 1;
-  max-width: 50%;
-  position: relative;
-  display: flex;
-  align-items: stretch;
-}
-
-.hero-enhanced-img {
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 @media (max-width: 768px) {
   .hero-enhanced {
     padding: 4rem 5% 5rem;
-  }
-  
-  .hero-enhanced-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-  
-  .hero-enhanced-content > div:first-child {
-    max-width: 100%;
-  }
-  
-  .hero-enhanced-image {
-    max-width: 100%;
-    min-height: 200px;
   }
   
   .hero-enhanced-content h1 {
@@ -146,64 +110,52 @@
 }
 
 .team-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.team-image {
-  height: 300px;
-  overflow: hidden;
-}
-
-.team-img {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  object-fit: cover;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.team-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem 2rem;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+}
+
+.team-role-icon {
+  color: #126F43;
 }
 
 .team-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 2rem;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 2rem;
+  position: relative;
+  text-align: center;
+  align-items: center;
 }
 
 .team-content h3 {
   font-size: 1.25rem;
   font-weight: 600;
   color: #126F43;
-  margin-bottom: 0.5rem;
-}
-
-.team-content h4 {
-  font-size: 1rem;
-  color: #4a5568;
-  margin-bottom: 1rem;
-}
-
-.team-content p {
-    margin-top: 1.5rem;
-    color: #4a5568;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .linkedin-link {
   display: inline-block;
   margin-top: auto;
-  align-self: flex-start;
   color: #0077b5;
-  transition: color 0.3s ease;
 }
 
 .linkedin-icon {
-  transition: transform 0.2s ease;
+  display: block;
 }
 
 .cta-enhanced {
