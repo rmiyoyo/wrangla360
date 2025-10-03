@@ -165,44 +165,67 @@ nav {
   font-weight: 700;
   color: #126F43;
   margin-bottom: 3rem;
-  text-align: left;
+  text-align: center;
 }
 
 .focus-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
-.focus-item {
+.focus-card {
   background: #ffffff;
-  border: 2px solid #e2e8f0;
-  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
   padding: 2.5rem 2rem;
-  text-align: left;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.focus-icon {
+  width: 64px;
+  height: 64px;
+  color: #126F43;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.focus-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: #126F43;
+  fill: none;
+}
+
+.focus-card h3 {
+  font-size: 1.375rem;
   font-weight: 600;
   color: #126F43;
-  font-size: 1.125rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
+  margin-bottom: 1rem;
 }
 
-.focus-item:hover {
-  text-decoration: none;
-  color: #000;
+.focus-card p {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
 
-.focus-item-page {
-  background: #ffffff;
-  border: 2px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 2.5rem 2rem;
-  text-align: left;
-  font-weight: 600;
+.focus-link {
   color: #126F43;
-  font-size: 1.125rem;
+  font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1.5px solid #126F43;
+  border-radius: 6px;
 }
 
 .news-section {
@@ -217,6 +240,7 @@ nav {
   font-weight: 700;
   color: #126F43;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .articles-grid {
@@ -416,6 +440,15 @@ footer {
   .focus-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  
+  .focus-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .focus-icon {
+    width: 56px;
+    height: 56px;
   }
   
   .news-section {

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { prisma } from '@/lib/db';
+import { LineChart, Activity, Users } from 'lucide-react';
 
 export default async function Home({ 
   searchParams 
@@ -83,7 +84,7 @@ export default async function Home({
                 <h3>{article.title}</h3>
                 <p>{article.excerpt}</p>
                 <Link href={`/article/${article.slug}`}>
-                  Read more <span aria-hidden="true">→</span>
+                  Read more <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>
             </article>
@@ -94,15 +95,53 @@ export default async function Home({
       <section className="focus-section">
         <h2>Our focus</h2>
         <div className="focus-grid">
-          <Link href="services/risk-assessment" className="focus-item">
-            Systemic risk assessment
-          </Link>
-          <Link href="services/predictive-analytics" className="focus-item">
-            Predictive analytics
-          </Link>
-          <Link href="services/social-impact" className="focus-item">
-            Inclusive data and social impact
-          </Link>
+          <div className="focus-card" style={{
+            padding: '2rem',
+            borderRadius: '0.75rem',
+            background: '#fafafa',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.06)'
+          }}>
+            <div className="focus-icon" style={{ marginBottom: '1rem' }}>
+              <LineChart size={32} strokeWidth={1.25} />
+            </div>
+            <h3>Systemic Risk Assessment</h3>
+            <p>Understanding today to prepare for tomorrow. Identify vulnerabilities and build resilient systems.</p>
+            <Link href="services/risk-assessment" className="focus-link">
+              Learn more
+            </Link>
+          </div>
+          
+          <div className="focus-card" style={{
+            padding: '2rem',
+            borderRadius: '0.75rem',
+            background: '#fafafa',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.06)'
+          }}>
+            <div className="focus-icon" style={{ marginBottom: '1rem' }}>
+              <Activity size={32} strokeWidth={1.25} />
+            </div>
+            <h3>Predictive Analytics</h3>
+            <p>Forecasting the future with confidence. Move from reactive responses to proactive planning.</p>
+            <Link href="services/predictive-analytics" className="focus-link">
+              Learn more
+            </Link>
+          </div>
+          
+          <div className="focus-card" style={{
+            padding: '2rem',
+            borderRadius: '0.75rem',
+            background: '#fafafa',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.06)'
+          }}>
+            <div className="focus-icon" style={{ marginBottom: '1rem' }}>
+              <Users size={32} strokeWidth={1.25} />
+            </div>
+            <h3>Inclusive Data &amp; Social Impact</h3>
+            <p>Turning insights into equitable action. Create change that&apos;s data-driven and socially grounded.</p>
+            <Link href="services/social-impact" className="focus-link">
+              Learn more
+            </Link>
+          </div>
         </div>
       </section>
 
