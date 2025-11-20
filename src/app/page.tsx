@@ -49,8 +49,7 @@ export default async function Home({
         <div className="hero-content">
           <h1>Our mission is to drive insights and action with analytics and data</h1>
           <p>
-            We are a consultancy that provides data-driven solutions to support decision making and
-            drive sustainable outcomes.
+            We provide data-driven solutions to support decision making and drive sustainable outcomes.
           </p>
           <Link href="/what-we-do" className="hero-btn">
             Learn more
